@@ -10,13 +10,11 @@
 
 -   [TLDR](#tldr)
 
--   [Install](#install)
+-   [Installation](#installation)
 
 -   [Usage](#usage)
 
-    -   -   [Customization](#customization)
-
--   [Installation and SetUp](#installation-and-setup)
+    -   [Customization](#customization)
 
 -   [Changelog](#changelog)
 
@@ -26,7 +24,11 @@
 
 Instead of `git commit` use `git cz` with `@hnp/cz` as the adaptor
 
-## Install
+## Installation
+
+```sh
+npm install @hnp/cz --save-dev
+```
 
 ## Usage
 
@@ -56,46 +58,13 @@ Now, can use `git cz` instead of `git commit`.
 npm install --global @hnp/cz && echo '{ "path": "@hnp/cz" }' > ~/.czrc
 ```
 
-#### Customization
+### Customization
 
 You can customize the `scopes` on a project basis by adding a configuration section in your `package.json`:
 
 ```json
 { "config": { "scopes": ["home", "accounts", "ci"] } }
 ```
-
-## Installation and SetUp
-
-First, install the Commitizen cli tools:
-
-```sh
-npm install commitizen -g
-```
-
-Next, initialize your project to use the adapter by typing:
-
-```bash
-    commitizen init @hnp/cz --save-dev --save-exact
-```
-
-> Pro TIP: set as default adapter for your projects
-
-```bash
-npm install --global @hnp/cz
-echo '{ "path": "@hnp/cz" }' > ~/.czrc
-```
-
-You can customize the `scopes` on a project basis by adding a configuration section in your `package.json`:
-
-```json
-{
-    "config": {
-        "scopes": ["home", "accounts", "ci"]
-    }
-}
-```
-
-Now, instead of `git commit` you should use `git cz`.
 
 ## Changelog
 
