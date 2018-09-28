@@ -56,13 +56,13 @@ module.exports = ({ pkg }) => tree => {
     }),
     head => ({
       banner: fp.find(isBanner)(head.images) || false,
-      badges: fp.find(isBadge)(head.images) || false,
+      badges: fp.filter(isBadge)(head.images) || false,
       extras: head.extras
     }),
     head => [
       heading,
       head.banner,
-      head.badges,
+      ...head.badges,
       description,
       ...head.extras,
       { type: 'thematicBreak' }
