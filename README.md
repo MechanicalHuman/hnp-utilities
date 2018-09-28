@@ -2,7 +2,7 @@
 
 ![hero](hero.png)
 
-> :robot: Monorepo for a series of opinionated NPM packages.
+> Monorepo for a series of opinionated NPM packages.
 
 Originally created as an internal tool for repository consistency at [**@CactusTechnologies**](https://github.com/CactusTechnologies).
 

@@ -8,13 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/MechanicalHuman/hnp-utilities.git"
+    "url": "git@github.com:MechanicalHuman/hnp-utilities.git"
   },
   "license": "MIT",
   "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (https://www.hidden-node-problem.com)",
-  "contributors": [
-    "An"
-  ],
   "files": [
     "lib",
     "bin"
