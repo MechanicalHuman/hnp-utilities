@@ -63,5 +63,8 @@
   "peerDependencies": {
     "prettier": "*"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "preferDev": true
 }
