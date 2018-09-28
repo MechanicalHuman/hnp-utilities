@@ -2,7 +2,7 @@
 
 ![hero](hero.png)
 
-> Commitizen Adaptor, fully compatible with angular style.
+> Commitizen Adaptor, compatible with angular style.
 
 ---
 
