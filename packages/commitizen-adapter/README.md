@@ -1,8 +1,8 @@
 # @hnp/cz
 
-![hero](hero.png)
+![hero](https://github.com/MechanicalHuman/hnp-utilities/blob/master/packages/commitizen-adapter/hero.png)
 
-> Commitizen Adaptor, compatible with angular style.
+> Commitizen Adaptor, fully compatible with angular style.
 
 ---
 
@@ -47,7 +47,13 @@ commitizen init @hnp/cz
 The command will initialize the adapter and add the following to your `package.json`
 
 ```json
-{ "config": { "commitizen": { "path": "@hnp/cz" } } }
+{
+    "config": {
+        "commitizen": {
+            "path": "@hnp/cz"
+        }
+    }
+}
 ```
 
 Now, can use `git cz` instead of `git commit`.
@@ -63,7 +69,11 @@ npm install --global @hnp/cz && echo '{ "path": "@hnp/cz" }' > ~/.czrc
 You can customize the `scopes` on a project basis by adding a configuration section in your `package.json`:
 
 ```json
-{ "config": { "scopes": ["home", "accounts", "ci"] } }
+{
+    "config": {
+        "scopes": ["home", "accounts", "ci"]
+    }
+}
 ```
 
 ## Changelog

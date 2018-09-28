@@ -1,8 +1,8 @@
 # @hnp/package-scripts
 
-![hero](hero.png)
+![hero](https://github.com/MechanicalHuman/hnp-utilities/blob/master/packages/package-scripts/hero.png)
+
 ![version](https://img.shields.io/npm/v/@hnp/package-scripts.svg)
-![licence](https://img.shields.io/npm/l/@hnp/package-scripts.svg)
 
 > Package Maintenance Scripts
 
@@ -14,7 +14,7 @@
 
 -   [Usage](#usage)
 
-    -   [compile](#compile)
+    -   [compile - Updates the project files.](#compile---updates-the-project-files)
     -   [todos](#todos)
     -   [version](#version)
 

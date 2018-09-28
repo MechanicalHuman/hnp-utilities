@@ -1,8 +1,8 @@
 # @hnp/license-generator
 
 ![hero](hero.png)
+
 ![version](https://img.shields.io/npm/v/@hnp/license-generator.svg)
-![licence](https://img.shields.io/npm/l/@hnp/license-generator.svg)
 
 > Basic licence generator, used internally by @hnp/package-scripts
 
