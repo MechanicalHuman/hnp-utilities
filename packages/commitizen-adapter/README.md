@@ -1,9 +1,8 @@
 # @hnp/cz
 
-![hero](https://github.com/MechanicalHuman/hnp-utilities/blob/master/packages/commitizen-adapter/hero.png)
+![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/packages/commitizen-adapter/hero.png)
 
 ![version](https://img.shields.io/npm/v/@hnp/cz.svg)
-
 ![licence](https://img.shields.io/npm/l/@hnp/cz.svg)
 
 > Commitizen Adaptor, fully compatible with angular style.

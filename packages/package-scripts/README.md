@@ -1,9 +1,8 @@
 # @hnp/package-scripts
 
-![hero](https://github.com/MechanicalHuman/hnp-utilities/blob/master/packages/package-scripts/hero.png)
+![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/packages/package-scripts/hero.png)
 
 ![version](https://img.shields.io/npm/v/@hnp/package-scripts.svg)
-
 ![licence](https://img.shields.io/npm/l/@hnp/package-scripts.svg)
 
 > Package Maintenance Scripts
@@ -16,7 +15,7 @@
 
 -   [Usage](#usage)
 
-    -   [compile - Updates the project files.](#compile---updates-the-project-files)
+    -   [compile](#compile)
     -   [todos](#todos)
     -   [version](#version)
 
@@ -34,7 +33,9 @@ npm install @hnp/package-scripts --save-dev
 
 This tool is meant to be used as part of the `npm` package scripts in your `package.json`.
 
-### `compile` - Updates the project files.
+### `compile`
+
+Updates the project files.
 
 -   Normalizes `package.json`.
 
