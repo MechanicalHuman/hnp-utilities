@@ -1,8 +1,12 @@
 # @hnp/eslint-config
 
+![hero](hero.png)
+![version](https://img.shields.io/npm/v/@hnp/eslint-config.svg)
+![licence](https://img.shields.io/npm/l/@hnp/eslint-config.svg)
+
 > ESlint Rules
 
-Just extending `standard` with pedantic rules about `lodash/fp`
+Extends `standard` with pedantic rules about `lodash/fp`
 
 ---
 
