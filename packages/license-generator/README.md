@@ -78,6 +78,8 @@ All rights reserved.
 
 ## Changelog
 
+Find the CHANGELOG [here](CHANGELOG.md), generated using Conventional Commits.
+
 ## License
 
 [MIT](LICENSE) © [Jorge Proaño](https://www.hidden-node-problem.com)

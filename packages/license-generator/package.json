@@ -1,6 +1,6 @@
 {
   "name": "@hnp/license-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic licence generator, used internally by @hnp/package-scripts",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/license-generator#readme",
   "bugs": {
