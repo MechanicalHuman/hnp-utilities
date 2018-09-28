@@ -29,7 +29,6 @@ const isH2 = fp.allPass([isHeading, fp.propEq('depth', 2)])
 
 const headIsH2 = fp.pipe([fp.head, isH2])
 
-
 module.exports = ({ pkg }) => tree => {
   const heading = {
     type: 'heading',
@@ -46,9 +45,6 @@ module.exports = ({ pkg }) => tree => {
       }
     ]
   }
-
-
-
 
   const nodes = fp.pipe(
     getCurrentHeader,
@@ -88,4 +84,3 @@ function getCurrentHeader (tree) {
   }
   return heading
 }
-

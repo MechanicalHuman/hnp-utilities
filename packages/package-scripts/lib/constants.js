@@ -25,7 +25,6 @@ exports.CLOG_PATH = findFile('CHANGELOG.md')
 
 exports.README_TP_PATH = path.resolve(__dirname, './fixtures', 'readme.txt')
 
-
 exports.ERR_PKG = 'No package.json found.'
 exports.ERR_GIT = 'No git remote configuration found.'
 
