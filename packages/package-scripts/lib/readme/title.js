@@ -59,10 +59,19 @@ module.exports = ({ pkg }) => tree => {
       badges: fp.filter(isBadge)(head.images) || false,
       extras: head.extras
     }),
+    head => ({
+      ...head,
+      badges: head.badges
+        ? {
+          type: 'paragraph',
+          children: fp.reduce(separateBadges, [], head.badges)
+        }
+        : false
+    }),
     head => [
       heading,
       head.banner,
-      ...head.badges,
+      head.badges,
       description,
       ...head.extras,
       { type: 'thematicBreak' }
@@ -83,4 +92,10 @@ function getCurrentHeader (tree) {
     heading.push(tree.children.shift())
   }
   return heading
+}
+
+function separateBadges (acc, curr) {
+  acc.push(curr)
+  acc.push({ type: 'text', value: '\n' })
+  return acc
 }
