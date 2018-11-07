@@ -21,7 +21,7 @@ Extends `standard` with pedantic rules about `lodash/fp`
 ## Installation
 
 ```sh
-npm install @hnp/eslint-config
+npm install @hnp/eslint-config --save-dev
 ```
 
 ## Usage
@@ -30,15 +30,15 @@ On your .eslintrc.js
 
 ```javascript
 module.exports = {
-    extends: '@hnp'
+    extends: '@hnp/eslint-config'
 }
 ```
 
-If you're using `React` you can use the `React` flavored one.
+Protip: You can omit the `eslint-config` part
 
 ```javascript
 module.exports = {
-    extends: '@hnp/eslint-config/react'
+    extends: '@hnp/eslint-config'
 }
 ```
 
