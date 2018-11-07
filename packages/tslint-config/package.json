@@ -1,0 +1,36 @@
+{
+  "name": "@hnp/tslint-config",
+  "version": "1.0.0",
+  "description": "TsLint Rules",
+  "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/tslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/MechanicalHuman/hnp-utilities/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MechanicalHuman/hnp-utilities.git"
+  },
+  "license": "MIT",
+  "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (https://www.hidden-node-problem.com)",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/eslint-config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "tslint-config-standard": "^8.0.1",
+    "tslint-react": "^3.6.0"
+  },
+  "peerDependencies": {
+    "tslint": ">=5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "preferDev": true
+}
