@@ -1,0 +1,37 @@
+{
+  "name": "@hnp/stylelint-config",
+  "version": "1.0.0",
+  "description": "Stylelint rules",
+  "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/stylelint-config#readme",
+  "bugs": {
+    "url": "https://github.com/MechanicalHuman/hnp-utilities/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MechanicalHuman/hnp-utilities.git"
+  },
+  "license": "MIT",
+  "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (https://www.hidden-node-problem.com)",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/stylelint-config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "stylelint-config-idiomatic-order": "^6.1.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">=9.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "preferDev": true
+}
