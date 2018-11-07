@@ -12,9 +12,7 @@
       "message": "chore(release): publish",
       "conventionalCommits": true
     },
-    "bootstrap": {
-      "npmClientArgs": ["--no-package-lock"]
-    }
+    "bootstrap": {}
   },
   "version": "independent"
 }
