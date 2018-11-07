@@ -1,3 +1,5 @@
+/** @module eslint-config */
+
 module.exports = {
   extends: ['standard', 'plugin:lodash-fp/recommended'],
   rules: {

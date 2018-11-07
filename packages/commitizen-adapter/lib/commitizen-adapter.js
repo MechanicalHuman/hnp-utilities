@@ -1,5 +1,4 @@
 /**
- * long description for the file
  *
  * @summary A commitizen adapter
  * @author Jorge Proaño
@@ -94,7 +93,7 @@ function shouldSkip (answers) {
 }
 
 /**
- * Create inquier.js questions object trying to read `types` and `scopes` from the current project
+ * Create inquirer.js questions object trying to read `types` and `scopes` from the current project
  * `package.json` falling back to nice default :)
  *
  * @param {Object} scopes Result of the `loadScopes` returned promise

@@ -1,3 +1,5 @@
+/** @module stylelint-config */
+
 module.exports = {
   extends: [
     'stylelint-config-standard',

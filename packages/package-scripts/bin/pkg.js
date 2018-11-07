@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/** @module pkg-scripts */
+
 const cli = require('yargs')
 const updateNotifier = require('update-notifier')
 
