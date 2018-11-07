@@ -1,0 +1,37 @@
+{
+  "name": "@hnp/eslint-config-react",
+  "version": "1.0.0",
+  "description": "ESlint Rules for React Apps",
+  "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/eslint-config-react#readme",
+  "bugs": {
+    "url": "https://github.com/MechanicalHuman/hnp-utilities/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MechanicalHuman/hnp-utilities.git"
+  },
+  "license": "MIT",
+  "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (https://www.hidden-node-problem.com)",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/eslint-config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@hnp/eslint-config": "^1.0.3",
+    "babel-eslint": "^10.0.1",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "preferDev": true
+}
