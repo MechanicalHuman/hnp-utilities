@@ -42,6 +42,7 @@
       "eslint-config",
       "eslint-config-react",
       "stylelint-config",
+      "tslint-config",
       "package-scripts",
       "license-generator"
     ]
