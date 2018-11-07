@@ -48,6 +48,7 @@ Updates the project files.
     -   Cleans the results of empty fields and saves a new `package.json`
 
 -   Updates the `README.md` _Trying its best to make it [standard-readme](https://github.com/RichardLitt/standard-readme/blob/master/spec.md) compilant_
+
     -   Matches the Title to the package name
     -   Matches the description to the package description
     -   Updates `## Table of contents`.
@@ -63,11 +64,16 @@ Updates the project files.
     -   Links `## Changelog` to the `CHANGELOG.md` file.
     -   Links `## Licence` to the `LICENCE` file.
     -   Scans the resulting document and creates links to repositories, pull requests, issues etc.
+
 -   Updates the `AUTHORS` file.
+
 -   Updates the `LICENCE` file using [@hnp/license-generator](https://www.npmjs.com/package/@hnp/license-generator)
+
 -   Updates the `TODO.md` file using [leasot](https://www.npmjs.com/package/leasot)
+
     -   Opt out by using the `--no-todos` flag.
     -   Uses the closest `.gitignore` to figure it out which files scan fot TODOs
+
 -   Stages the changed files. _Making it useful as a pre-commit hook_
 
 ### `todos`
