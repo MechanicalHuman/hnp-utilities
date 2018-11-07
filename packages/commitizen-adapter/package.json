@@ -1,6 +1,6 @@
 {
   "name": "@hnp/cz",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Commitizen Adaptor, fully compatible with angular style.",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/commitizen-adapter#readme",
   "bugs": {

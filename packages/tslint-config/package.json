@@ -1,6 +1,6 @@
 {
   "name": "@hnp/tslint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TsLint Rules",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/tslint-config#readme",
   "bugs": {
