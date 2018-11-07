@@ -6,5 +6,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ## 1.0.1 (2018-11-07)
 
 **Note:** Version bump only for package @hnp/tslint-config
-
-# Change Log
