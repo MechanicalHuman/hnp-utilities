@@ -1,7 +1,7 @@
-/** @module eslint-config-react */
+/** @module eslint-config-hnp-react */
 
 module.exports = {
-  extends: ['@hnp/eslint-config', 'plugin:react/recommended'],
+  extends: ['eslint-config-hnp', 'plugin:react/recommended'],
   parser: 'babel-eslint',
   plugins: ['react'],
   env: { browser: true }

@@ -30,7 +30,7 @@ On your .eslintrc.js
 
 ```javascript
 module.exports = {
-    extends: '@hnp/eslint-config-react'
+    extends: 'eslint-config-hnp-react'
 }
 ```
 
