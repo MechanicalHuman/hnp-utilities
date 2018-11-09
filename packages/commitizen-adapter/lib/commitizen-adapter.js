@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  *
  * @summary A commitizen adapter
@@ -19,18 +20,18 @@ const wrap = require('wrap-ansi')
 const truncate = require('cli-truncate')
 const termSize = require('term-size')
 const fp = require('lodash/fp')
-const Fuse = require('fuse.js')
-const autocomplete = require('inquirer-autocomplete-prompt')
 const chalk = require('chalk')
 const types = require('./types.json')
 
 const LIMIT = 100
 const MAX = fp.pipe(
-  () => termSize(),
+  termSize,
   fp.getOr(LIMIT, 'columns'),
   v => (v > LIMIT ? LIMIT : v)
 )()
 const MAX_DESC = types.reduce(lengthReducer, 0)
+const SEPARATOR = { type: 'separator' }
+const NONE = { name: ['none'], value: '' }
 
 /**
  * Export an object containing a `prompter` method. This object is used by `commitizen`.
@@ -39,7 +40,6 @@ const MAX_DESC = types.reduce(lengthReducer, 0)
  */
 module.exports = {
   prompter: function (cz, commit) {
-    cz.prompt.registerPrompt('autocomplete', autocomplete)
     loadScopes()
       .then(createQuestions)
       .then(cz.prompt)
@@ -47,6 +47,7 @@ module.exports = {
       .then(format)
       .then(printCommit)
       .then(commit)
+      .catch(err => console.error(err))
       .catch(() => console.error('😔  Commit has been canceled.'))
   }
 }
@@ -68,11 +69,14 @@ function loadScopes () {
 function getChoices () {
   const name = choice => fp.padStart(MAX_DESC)(choice.value)
   const desc = choice => wrap(choice.description, MAX)
-  return types.map(choice => ({
-    name: `${name(choice)}  ${choice.emoji}  ${desc(choice)}`,
-    value: choice.value,
-    alt: [...choice.alt, ...choice.scopes]
-  }))
+  return types.map(choice => {
+    if (choice.value === 'separator') return SEPARATOR
+    return {
+      name: `${name(choice)}  ${choice.emoji}  ${desc(choice)}`,
+      value: choice.value,
+      short: name(choice)
+    }
+  })
 }
 
 function shouldSkip (answers) {
@@ -81,10 +85,16 @@ function shouldSkip (answers) {
   const defaultAnswers = [
     'Quick Commit',
     'Updated dependencies.',
-    'Updated Configuration files.',
-    'Updated Package external tools.',
-    'Passing eslint rules.',
-    'Initial commit.'
+    'Updated Deployments.',
+    'New Version',
+    'Updated Scripts',
+    'Updated Ecosystem definitions',
+    'Updated Config files',
+    'Updated Webpack configuration',
+    'Updated TypeScript configuration',
+    'Changed Linting rules',
+    'Passing lint rules.',
+    'First commit.'
   ]
 
   if (defaultAnswers.includes(answers.subject.trim())) return true
@@ -97,49 +107,39 @@ function shouldSkip (answers) {
  * `package.json` falling back to nice default :)
  *
  * @param {Object} scopes Result of the `loadScopes` returned promise
- * @return {Array} Return an array of `inquier.js` questions
+ * @return {Array} Return an array of `inquirer.js` questions
  * @private
  */
 function createQuestions (scopes) {
-  const choices = getChoices()
-
-  const fuzzy = new Fuse(choices, {
-    shouldSort: true,
-    threshold: 0.4,
-    location: 0,
-    distance: 100,
-    maxPatternLength: 32,
-    minMatchCharLength: 1,
-    keys: ['value', 'alt']
-  })
+  const hasScopes = ({ type }) =>
+    fp.pipe(
+      fp.find(['value', type]),
+      fp.getOr([], 'scopes'),
+      fp.concat(scopes),
+      v => v.length > 0
+    )(types)
 
   return [
     {
-      type: 'autocomplete',
+      type: 'list',
       name: 'type',
       message: "Select the type of change you're committing:",
-      pageSize: 10,
-      source: (answers, query) => {
-        return Promise.resolve(query ? fuzzy.search(query) : choices)
-      }
+      pageSize: types.length,
+      choices: getChoices()
     },
     {
       type: 'list',
       name: 'scope',
       message: 'Specify a scope:',
-      choices: answers => {
-        if (answers.type === 'chore') {
-          return [
-            { name: ['none'], value: '' },
-            'dependencies',
-            'tools',
-            'config',
-            ...scopes
-          ]
-        }
-        return [{ name: ['none'], value: '' }, ...scopes]
-      },
-      when: answers => answers.type === 'chore' || scopes.length > 0
+      pageSize: scopes.length > 10 ? scopes.length : 10,
+      choices: answers =>
+        fp.pipe(
+          fp.find(['value', answers.type]),
+          fp.getOr([], 'scopes'),
+          extras => (extras.length > 0 ? [SEPARATOR, ...extras] : extras),
+          extras => [NONE, ...extras, SEPARATOR, ...scopes]
+        )(types),
+      when: answers => hasScopes(answers)
     },
     {
       type: 'input',
@@ -147,21 +147,21 @@ function createQuestions (scopes) {
       message: 'Write a short description:',
       default: ({ type, scope }) => {
         if (type === 'WIP') return 'Quick Commit'
-        if (type === 'chore' && scope === 'dependencies') {
-          return 'Updated dependencies.'
+        if (type === 'chore') {
+          if (scope === 'dependencies') return 'Updated dependencies.'
+          if (scope === 'deploy') return 'Updated Deployments.'
+          if (scope === 'release') return 'Published new version'
         }
-        if (type === 'chore' && scope === 'config') {
-          return 'Updated Configuration files.'
+        if (type === 'build') {
+          if (scope === 'scripts') return 'Updated Scripts'
+          if (scope === 'ecosystem') return 'Updated Ecosystem definitions'
+          if (scope === 'config') return 'Updated Config files'
+          if (scope === 'webpack') return 'Updated Webpack configuration'
+          if (scope === 'typescript') return 'Updated TypeScript configuration'
+          if (scope === 'linters') return 'Changed Linting rules'
         }
-        if (type === 'chore' && scope === 'tools') {
-          return 'Updated Package external tools.'
-        }
-        if (type === 'refactor') {
-          return 'Passing eslint rules.'
-        }
-        if (type === 'init') {
-          return 'Initial commit.'
-        }
+        if (type === 'style') return 'Passing lint rules.'
+        if (type === 'init') return 'First commit.'
         return ''
       },
       validate: input => (input.length > 0 ? true : 'Empty commit!')
@@ -182,7 +182,7 @@ function createQuestions (scopes) {
       type: 'input',
       name: 'breaking',
       message: 'List any BREAKING CHANGES (optional):',
-      when: answers => ['feat', 'fix'].includes(answers.type)
+      when: answers => ['feat', 'fix', 'chore'].includes(answers.type)
     },
     {
       type: 'confirm',
@@ -197,7 +197,7 @@ function createQuestions (scopes) {
 /**
  * Cancels the commit
  *
- * @param {Object} answers Answers provided by `inquier.js`
+ * @param {Object} answers Answers provided by `inquirer.js`
  * @return {Object} PassTrough
  * @throws {Error} If answers.confirmCommit is false
  */
@@ -211,7 +211,7 @@ function cancel (answers) {
 /**
  * Format the git commit message from given answers.
  *
- * @param {Object} answers Answers provided by `inquier.js`
+ * @param {Object} answers Answers provided by `inquirer.js`
  * @return {String} Formated git commit message
  */
 function format (answers) {
@@ -229,10 +229,11 @@ function format (answers) {
 
   const breaking = answers.breaking
     ? fp.pipe(
+      fp.constant(answers.breaking),
       brk => wrap(brk, LIMIT),
       brk => `BREAKING CHANGE:
       ${brk}`
-    )(answers.breaking)
+    )()
     : false
   // Close issues
   const footer = answers.issues
@@ -248,9 +249,12 @@ function format (answers) {
 }
 
 function printCommit (msg) {
+  // @ts-ignore
   console.log(`${chalk.green('> Commit message:')}
 
-  ${chalk.dim(msg)}
+  ${chalk
+    // @ts-ignore
+    .dim(msg)}
 
   `)
   return msg

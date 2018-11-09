@@ -1,7 +1,7 @@
 {
-  "name": "@hnp/eslint-config-react",
+  "name": "eslint-config-hnp-react",
   "version": "1.0.2",
-  "description": "ESlint Rules for React Apps",
+  "description": "EsLint Rules for React Apps",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/eslint-config-react#readme",
   "bugs": {
     "url": "https://github.com/MechanicalHuman/hnp-utilities/issues"
@@ -23,8 +23,8 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@hnp/eslint-config": "^1.0.5",
     "babel-eslint": "^10.0.1",
+    "eslint-config-hnp": "^1.0.5",
     "eslint-plugin-react": "^7.11.1"
   },
   "peerDependencies": {

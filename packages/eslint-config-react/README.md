@@ -1,11 +1,11 @@
-# @hnp/eslint-config-react
+# eslint-config-hnp-react
 
 ![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/hero.png)
 
 ![version](https://img.shields.io/npm/v/@hnp/eslint-config-react.svg)
 ![licence](https://img.shields.io/npm/l/@hnp/eslint-config-react.svg)
 
-> ESlint Rules for React Apps
+> EsLint Rules for React Apps
 
 Extends `standard` with pedantic rules about `lodash/fp`
 
@@ -21,7 +21,7 @@ Extends `standard` with pedantic rules about `lodash/fp`
 ## Installation
 
 ```sh
-npm install @hnp/eslint-config-react --save-dev
+npm install eslint-config-hnp-react --save-dev
 ```
 
 ## Usage

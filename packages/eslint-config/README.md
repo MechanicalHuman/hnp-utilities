@@ -1,11 +1,11 @@
-# @hnp/eslint-config
+# eslint-config-hnp
 
 ![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/hero.png)
 
-![version](https://img.shields.io/npm/v/@hnp/eslint-config.svg)
-![licence](https://img.shields.io/npm/l/@hnp/eslint-config.svg)
+![version](https://img.shields.io/npm/v/eslint-config-hnp.svg)
+![licence](https://img.shields.io/npm/l/eslint-config-hnp.svg)
 
-> ESlint Rules
+> EsLint Rules
 
 Extends `standard` with pedantic rules about `lodash/fp`
 
@@ -21,7 +21,7 @@ Extends `standard` with pedantic rules about `lodash/fp`
 ## Installation
 
 ```sh
-npm install @hnp/eslint-config --save-dev
+npm install eslint-config-hnp --save-dev
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ On your .eslintrc.js
 
 ```javascript
 module.exports = {
-    extends: '@hnp/eslint-config'
+    extends: 'eslint-config-hnp'
 }
 ```
 
@@ -38,7 +38,7 @@ Protip: You can omit the `eslint-config` part
 
 ```javascript
 module.exports = {
-    extends: '@hnp/eslint-config'
+    extends: 'hnp'
 }
 ```
 
