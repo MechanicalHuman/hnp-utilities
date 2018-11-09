@@ -1,5 +1,7 @@
 {
+  "version": "independent",
   "packages": ["packages/*"],
+  "progress": true,
   "command": {
     "publish": {
       "ignoreChanges": [
@@ -12,7 +14,9 @@
       "message": "chore(release): publish",
       "conventionalCommits": true
     },
-    "bootstrap": {}
-  },
-  "version": "independent"
+    "bootstrap": { "hoist": true },
+    "clean": { "yes": true },
+    "run": { "bail": false },
+    "exec": { "bail": false }
+  }
 }
