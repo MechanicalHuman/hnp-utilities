@@ -1,7 +1,7 @@
 {
-  "name": "@hnp/eslint-config",
+  "name": "eslint-config-hnp",
   "version": "1.0.5",
-  "description": "ESlint Rules",
+  "description": "EsLint Rules",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/eslint-config#readme",
   "bugs": {
     "url": "https://github.com/MechanicalHuman/hnp-utilities/issues"
