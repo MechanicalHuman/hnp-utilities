@@ -16,7 +16,6 @@
     "lib",
     "bin"
   ],
-  "main": "lib/package-scripts.js",
   "bin": {
     "package-scripts": "bin/pkg.js"
   },
@@ -42,7 +41,7 @@
     "mdast-flatten-image-paragraphs": "^1.0.0",
     "mdast-normalize-headings": "^1.0.1",
     "mdast-squeeze-paragraphs": "^3.0.3",
-    "mdast-util-heading-range": "^2.1.0",
+    "mdast-util-heading-range": "^2.1.1",
     "p-map": "^2.0.0",
     "p-tap": "^2.0.0",
     "read-pkg": "^4.0.1",
