@@ -1,4 +1,4 @@
-# @hnp/tslint-config
+# tslint-config-hnp
 
 ![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/hero.png)
 
@@ -21,7 +21,7 @@ Extends `standard` with pedantic rules about `lodash/fp`
 ## Installation
 
 ```sh
-npm install @hnp/tslint-config --save-dev
+npm install tslint-config-hnp --save-dev
 ```
 
 ## Usage
