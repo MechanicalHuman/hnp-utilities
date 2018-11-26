@@ -1,5 +1,5 @@
 {
-  "name": "@hnp/tslint-config",
+  "name": "tslint-config-hnp",
   "version": "1.0.2",
   "description": "TsLint Rules",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/tslint-config#readme",
@@ -15,7 +15,7 @@
   "files": [
     "lib"
   ],
-  "main": "lib/eslint-config.js",
+  "main": "lib/eslint-config.json",
   "directories": {
     "lib": "lib"
   },

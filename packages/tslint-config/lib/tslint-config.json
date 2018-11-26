@@ -1,0 +1,5 @@
+/** @module tslint-config */
+
+{
+  "extends": ["tslint-config-standard", "tslint-react"]
+}
