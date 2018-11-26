@@ -15,7 +15,7 @@
   "files": [
     "lib"
   ],
-  "main": "lib/eslint-config.json",
+  "main": "lib/tslint-config.json",
   "directories": {
     "lib": "lib"
   },
