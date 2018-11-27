@@ -12,10 +12,7 @@
   },
   "license": "MIT",
   "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (https://www.hidden-node-problem.com)",
-  "files": [
-    "lib"
-  ],
-  "main": "index.js",
+  "main": "tslint.json",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
