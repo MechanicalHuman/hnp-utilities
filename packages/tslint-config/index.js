@@ -1,0 +1,77 @@
+module.exports = {
+  extends: [
+    'tslint:recommended',
+    'tslint-config-standard',
+    'tslint-etc',
+    'tslint-react',
+    'tslint-config-prettier'
+  ],
+  rules: {
+    'no-inferrable-types': true,
+    'no-namespace': {
+      options: ['allow-declarations']
+    },
+    'interface-name': {
+      options: 'never-prefix'
+    },
+    'no-unsafe-any': true,
+
+    ban: {
+      options: [
+        {
+          name: 'parseInt',
+          message: 'use #type-coercion -> Number(val)'
+        },
+        {
+          name: 'parseFloat',
+          message: 'use #type-coercion -> Number(val)'
+        },
+        {
+          name: 'Array',
+          message: 'use #array-constructor'
+        },
+        {
+          name: ['describe', 'only'],
+          message: "don't focus spec blocks"
+        },
+        {
+          name: ['it', 'only'],
+          message: "don't focus tests"
+        }
+      ]
+    },
+    'no-magic-numbers': true,
+    'no-require-imports': true,
+    'no-boolean-literal-compare': true,
+    'no-invalid-this': {
+      options: 'check-function-in-method'
+    },
+    'no-invalid-template-strings': true,
+    'ordered-imports': true,
+    'prefer-template': true,
+    'newline-before-return': true,
+    'match-default-export-name': true,
+    'no-parameter-reassignment': true,
+    'file-name-casing': {
+      options: ['kebab-case']
+    },
+    'switch-default': true,
+
+    'no-any': true,
+    'member-access': {
+      options: ['no-public']
+    },
+    'object-literal-sort-keys': false,
+    'interface-over-type-literal': false,
+
+    'no-unused-declaration': true,
+    'no-missing-dollar-expect': true,
+    'no-assign-mutated-array': true,
+
+    'jsx-boolean-value': {
+      options: 'never'
+    }
+  },
+
+  jsRules: true
+}
