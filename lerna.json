@@ -10,6 +10,7 @@
         "**/__tests__/**",
         "**/LICENSE"
       ],
+      "verifyAccess": true,
       "allowBranch": "master",
       "message": "chore(release): publish",
       "conventionalCommits": true
