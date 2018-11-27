@@ -1,6 +1,6 @@
 {
   "name": "tslint-config-hnp",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "TsLint Rules",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/tslint-config#readme",
   "bugs": {
@@ -17,10 +17,10 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "tslint-config-standard": "^8.0.1",
-    "tslint-react": "^3.6.0",
     "tslint-config-prettier": "^1.17.0",
-    "tslint-etc": "^1.2.7"
+    "tslint-config-standard": "^8.0.1",
+    "tslint-etc": "^1.2.7",
+    "tslint-react": "^3.6.0"
   },
   "peerDependencies": {
     "tslint": ">=5.0.0"

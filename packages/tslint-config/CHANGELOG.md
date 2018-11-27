@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/MechanicalHuman/hnp-utilities/compare/tslint-config-hnp@1.0.4...tslint-config-hnp@1.1.0) (2018-11-27)
+
+### Features
+
+-   **tslint-config:** Pedantic mode ([ee3e59c](https://github.com/MechanicalHuman/hnp-utilities/commit/ee3e59c))
+-   **tslint-config:** using json as the export ([b58462d](https://github.com/MechanicalHuman/hnp-utilities/commit/b58462d))
+
 ## [1.0.4](https://github.com/MechanicalHuman/hnp-utilities/compare/tslint-config-hnp@1.0.3...tslint-config-hnp@1.0.4) (2018-11-26)
 
 ### Bug Fixes
