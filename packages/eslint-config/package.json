@@ -12,6 +12,9 @@
   },
   "license": "MIT",
   "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (https://www.hidden-node-problem.com)",
+  "contributors": [
+    "Jorge Proaño <jorge@hiddennodeproblem.com>"
+  ],
   "files": [
     "lib"
   ],

@@ -1,6 +1,6 @@
 {
   "name": "@hnp/package-scripts",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Package Maintenance Scripts",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/package-scripts#readme",
   "bugs": {
@@ -12,6 +12,9 @@
   },
   "license": "MIT",
   "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (https://www.hidden-node-problem.com)",
+  "contributors": [
+    "Jorge Proaño <jorge@hiddennodeproblem.com>"
+  ],
   "files": [
     "lib",
     "bin"

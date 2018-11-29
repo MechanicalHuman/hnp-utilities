@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.8](https://github.com/MechanicalHuman/hnp-utilities/compare/@hnp/package-scripts@1.0.7...@hnp/package-scripts@1.0.8) (2018-11-29)
+
+### Bug Fixes
+
+-   **package-scripts:** better url surpport for azure devops repos ([47e60b7](https://github.com/MechanicalHuman/hnp-utilities/commit/47e60b7))
+
 ## [1.0.7](https://github.com/MechanicalHuman/hnp-utilities/compare/@hnp/package-scripts@1.0.6...@hnp/package-scripts@1.0.7) (2018-11-09)
 
 **Note:** Version bump only for package @hnp/package-scripts
