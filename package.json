@@ -20,6 +20,7 @@
     "clean": "run-p -sc clean:*",
     "clean:packages": "lerna clean",
     "clean:root": "rm -rf package-lock.json node_modules",
+    "precommit": "lint-staged",
     "commit": "git cz --no-verify",
     "docs": "run-s -sc docs:**",
     "docs:packages:api": "lerna run docs",
