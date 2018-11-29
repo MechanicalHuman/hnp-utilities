@@ -20,7 +20,7 @@ module.exports = () =>
       skip: ctx => !IN_REPO || !ctx.remote,
       task: ctx =>
         Promise.resolve()
-          .then(() => ctx.repoData.toString('ssh'))
+          .then(() => ctx.repoData.toString())
           .then(gitURl => updateCtx('repository.url', gitURl, ctx))
           .then(() => updateCtx('repository.type', 'git', ctx))
     },
@@ -79,4 +79,9 @@ function cleanUp (ctx) {
   )(ctx)
   ctx.pkg = pkg
   return pkg
+}
+
+function remoteAsSSH (o) {
+  if (o.source !== 'azure.com') return o.toString('ssh')
+  return `git@ssh.${o.resource}:v3/${o.organization}/${o.owner}/${o.name}`
 }

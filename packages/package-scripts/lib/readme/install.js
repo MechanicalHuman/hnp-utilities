@@ -4,7 +4,7 @@ const fp = require('lodash/fp')
 const heading = require('mdast-util-heading-range')
 
 const { HEADING_INSTALL } = require('../constants')
-
+const { remoteAsSSH } = require('../utils')
 const IS_GLOBAL = fp.getOr(false, 'preferGlobal')
 const IS_DEV = fp.getOr(false, 'preferDev')
 const IS_PRIVATE = fp.getOr(false, 'private')
@@ -23,7 +23,7 @@ module.exports = ({ pkg, repoData }) => tree => {
     if (IS_GLOBAL(pkg)) return `npm install ${pkg.name} --global`
     if (IS_DEV(pkg)) return `npm install ${pkg.name} --save-dev`
     if (IS_PRIVATE(pkg)) {
-      return `git clone ${repoData.toString('ssh')} ${repoData.name}
+      return `git clone ${remoteAsSSH(repoData)} ${repoData.name}
   cd ${repoData.name}
   npm install`
     }

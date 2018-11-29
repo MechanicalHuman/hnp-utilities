@@ -3,7 +3,7 @@
     "module": "commonjs",
     "checkJs": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
+    // "allowSyntheticDefaultImports": true,
     "target": "ES6"
   },
   "exclude": ["node_modules", "**/node_modules/*"]

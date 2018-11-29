@@ -15,11 +15,13 @@ const isStr = fp.isString
 
 const exists = path => fs.existsSync(path)
 
-const readFile = path => (exists(path) ? loadFile(path) : Promise.resolve(''))
-const readJson = path => (exists(path) ? loadJson(path) : Promise.resolve({}))
+const readFile = async path =>
+  exists(path) ? loadFile(path) : Promise.resolve('')
+const readJson = async path =>
+  exists(path) ? loadJson(path) : Promise.resolve({})
 
-const writeJson = (p, d) => saveJson(p, d, { detectIndent: true })
-const writeFile = (p, d) => saveFile(p, d, 'utf8')
+const writeJson = async (p, d) => saveJson(p, d, { detectIndent: true })
+const writeFile = async (p, d) => saveFile(p, d, 'utf8')
 
 const onError = err => {
   throw err
@@ -95,6 +97,11 @@ const ignore = () => {
   return fileToBlobs(gitignorePath)
 }
 
+const remoteAsSSH = o => {
+  if (o.source !== 'azure.com') return o.toString('ssh')
+  return `git@ssh.${o.resource}:v3/${o.organization}/${o.owner}/${o.name}`
+}
+
 module.exports = {
   wait,
   exists,
@@ -106,5 +113,6 @@ module.exports = {
   ignore,
   hash,
   unParsePerson,
-  parsePerson
+  parsePerson,
+  remoteAsSSH
 }
