@@ -34,7 +34,6 @@
     "chalk": "^2.4.1",
     "execa": "^1.0.0",
     "find-up": "^3.0.0",
-    "gh-got": "^8.0.1",
     "git-url-parse": "^11.1.1",
     "json-stable-stringify": "^1.0.1",
     "leasot": "^6.6.2",

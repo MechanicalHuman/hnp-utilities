@@ -28,7 +28,7 @@ const isGitHub = fp.pipe(
 
 const getRepository = repo => (isGitHub(repo) ? repo.toString('https') : '')
 
-module.exports = ({ pkg, repoData, contributors, force }) => {
+module.exports = ({ pkg, repoData, contributors }) => {
   const readme = unified()
 
   readme.use(parse)

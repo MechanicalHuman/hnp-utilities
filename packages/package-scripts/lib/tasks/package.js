@@ -35,6 +35,7 @@ module.exports = () =>
     },
     {
       title: 'Updating Contributors',
+      skip: ctx => ctx.authors === false,
       task: ctx =>
         fp.pipe(
           ctx =>

@@ -24,6 +24,11 @@ exports.builder = argv =>
       describe: 'Saves a TODO.md file',
       type: 'boolean'
     })
+    .option('authors', {
+      default: true,
+      describe: 'Saves a AUTHORS file',
+      type: 'boolean'
+    })
 
 exports.handler = main
 
@@ -60,6 +65,7 @@ const tasks = new Listr(
     {
       title: 'Update AUTHORS',
       enabled: () => IN_REPO,
+      skip: ctx => ctx.authors === false,
       task: require('../lib/tasks/authors')
     },
     {
@@ -88,6 +94,7 @@ function main (argv) {
   Add it to your enviroment: {bold.green echo 'export GITHUB_ACCESS_TOKEN={red.cyan YOUR_TOKEN}' >> ~/.bashrc}
 `)
   }
+
   return tasks.run({
     hash: {},
     remote: false,
@@ -95,6 +102,7 @@ function main (argv) {
     contributors: [],
     pkg: {},
     override: argv.override,
-    todos: argv.todos
+    todos: argv.todos,
+    authors: argv.authors
   })
 }

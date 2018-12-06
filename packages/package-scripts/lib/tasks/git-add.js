@@ -31,6 +31,7 @@ module.exports = () =>
     {
       title: 'Add AUTHORS',
       enabled: () => IN_REPO,
+      skip: ctx => ctx.authors === false,
       task: worker(AUTHORS_PATH, 'authors')
     },
     {
