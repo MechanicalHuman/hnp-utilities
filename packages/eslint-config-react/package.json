@@ -15,20 +15,14 @@
   "contributors": [
     "Jorge Proaño <jorge@hiddennodeproblem.com>"
   ],
-  "files": [
-    "lib"
-  ],
-  "main": "lib/eslint-config.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "eslint-config.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "eslint-config-hnp": "^1.0.6",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.12.3"
   },
   "peerDependencies": {
     "eslint": ">=5.0.0"
