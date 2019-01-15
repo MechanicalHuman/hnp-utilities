@@ -1,4 +1,4 @@
-# @hnp/stylelint-config
+# stylelint-config-hnp
 
 ![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/hero.png)
 
@@ -19,7 +19,7 @@
 ## Installation
 
 ```sh
-npm install @hnp/stylelint-config --save-dev
+npm install stylelint-config-hnp --save-dev
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ On your .stylelintrc.js
 
 ```javascript
 module.exports = {
-    extends: '@hnp/stylelint-config'
+    extends: 'stylelint-config-hnp'
 }
 ```
 
