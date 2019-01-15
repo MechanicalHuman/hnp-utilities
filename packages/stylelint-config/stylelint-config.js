@@ -1,4 +1,4 @@
-/** @module stylelint-config */
+/** @module stylelint-config-hnp */
 
 module.exports = {
   extends: [
