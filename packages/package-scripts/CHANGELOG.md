@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.10](https://github.com/MechanicalHuman/hnp-utilities/compare/@hnp/package-scripts@1.0.9...@hnp/package-scripts@1.0.10) (2019-01-15)
+
+**Note:** Version bump only for package @hnp/package-scripts
+
 ## [1.0.9](https://github.com/MechanicalHuman/hnp-utilities/compare/@hnp/package-scripts@1.0.8...@hnp/package-scripts@1.0.9) (2018-12-06)
 
 ### Bug Fixes

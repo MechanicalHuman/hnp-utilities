@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-hnp-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "EsLint Rules for React Apps",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/eslint-config-react#readme",
   "bugs": {
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint-config-hnp": "^1.0.6",
+    "eslint-config-hnp": "^1.0.7",
     "eslint-plugin-react": "^7.12.3"
   },
   "peerDependencies": {
