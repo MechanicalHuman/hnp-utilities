@@ -2,12 +2,10 @@
 
 ![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/hero.png)
 
-![version](https://img.shields.io/npm/v/@hnp/eslint-config.svg)
-![licence](https://img.shields.io/npm/l/@hnp/eslint-config.svg)
+![version](https://img.shields.io/npm/v/tslint-config-hnp.svg)
+![licence](https://img.shields.io/npm/l/tslint-config-hnp.svg)
 
 > TsLint Rules
-
-Extends `standard` with pedantic rules about `lodash/fp`
 
 ---
 
@@ -26,20 +24,13 @@ npm install tslint-config-hnp --save-dev
 
 ## Usage
 
-On your .eslintrc.js
+On your tslint.json
 
-```javascript
-module.exports = {
-    extends: '@hnp/eslint-config'
+```json
+{
+  "extends": ["tslint-config-hnp"]
 }
-```
 
-Protip: You can omit the `eslint-config` part
-
-```javascript
-module.exports = {
-    extends: '@hnp/eslint-config'
-}
 ```
 
 ## Changelog
