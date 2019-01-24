@@ -2,12 +2,11 @@
 
 ![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/hero.png)
 
-![version](https://img.shields.io/npm/v/@hnp/eslint-config-react.svg)
-![licence](https://img.shields.io/npm/l/@hnp/eslint-config-react.svg)
+![version](https://img.shields.io/npm/v/eslint-config-hnp-react.svg)
+![licence](https://img.shields.io/npm/l/eslint-config-hnp-react.svg)
 
 > EsLint Rules for React Apps
 
-Extends `standard` with pedantic rules about `lodash/fp`
 
 ---
 
