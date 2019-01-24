@@ -2,8 +2,8 @@
 
 ![hero](https://raw.githubusercontent.com/MechanicalHuman/hnp-utilities/master/hero.png)
 
-![version](https://img.shields.io/npm/v/@hnp/stylelint-config.svg)
-![licence](https://img.shields.io/npm/l/@hnp/stylelint-config.svg)
+![version](https://img.shields.io/npm/v/stylelint-config-hnp.svg)
+![licence](https://img.shields.io/npm/l/stylelint-config-hnp.svg)
 
 > Stylelint rules
 
