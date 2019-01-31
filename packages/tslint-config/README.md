@@ -28,9 +28,8 @@ On your tslint.json
 
 ```json
 {
-  "extends": ["tslint-config-hnp"]
+    "extends": ["tslint-config-hnp"]
 }
-
 ```
 
 ## Changelog

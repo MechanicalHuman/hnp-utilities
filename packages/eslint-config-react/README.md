@@ -7,7 +7,6 @@
 
 > EsLint Rules for React Apps
 
-
 ---
 
 ## Table of contents

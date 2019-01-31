@@ -22,7 +22,7 @@
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "eslint-config-hnp": "^1.0.7",
-    "eslint-plugin-react": "^7.12.3"
+    "eslint-plugin-react": "^7.12.4"
   },
   "peerDependencies": {
     "eslint": ">=5.0.0"
