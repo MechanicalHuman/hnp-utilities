@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/MechanicalHuman/hnp-utilities/compare/eslint-config-hnp@1.0.8...eslint-config-hnp@1.1.0) (2019-02-21)
+
+### Features
+
+-   **eslint-config:** addded header ([55165d0](https://github.com/MechanicalHuman/hnp-utilities/commit/55165d0))
+
 ## [1.0.8](https://github.com/MechanicalHuman/hnp-utilities/compare/eslint-config-hnp@1.0.7...eslint-config-hnp@1.0.8) (2019-01-31)
 
 **Note:** Version bump only for package eslint-config-hnp
