@@ -1,5 +1,3 @@
-/** @module stylelint-config-hnp */
-
 module.exports = {
   extends: [
     'stylelint-config-standard',
