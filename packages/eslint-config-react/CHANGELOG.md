@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/MechanicalHuman/hnp-utilities/compare/eslint-config-hnp-react@1.0.6...eslint-config-hnp-react@1.0.7) (2019-04-09)
+
+**Note:** Version bump only for package eslint-config-hnp-react
+
 ## [1.0.6](https://github.com/MechanicalHuman/hnp-utilities/compare/eslint-config-hnp-react@1.0.5...eslint-config-hnp-react@1.0.6) (2019-02-21)
 
 **Note:** Version bump only for package eslint-config-hnp-react
