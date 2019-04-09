@@ -8,7 +8,8 @@
         "**/*.md",
         "**/__fixtures__/**",
         "**/__tests__/**",
-        "**/LICENSE"
+        "**/LICENSE",
+        "package-lock.json"
       ],
       "verifyAccess": true,
       "allowBranch": "master",
