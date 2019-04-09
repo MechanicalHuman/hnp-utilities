@@ -27,7 +27,7 @@
   { "value": "separator" },
 
   {
-    "emoji": "🥽",
+    "emoji": "🔧",
     "value": "refactor",
     "description": "A code change that neither fixes a bug nor adds a feature",
     "scopes": []
@@ -54,10 +54,10 @@
     ]
   },
   {
-    "emoji": "🧩",
+    "emoji": "👷",
     "value": "chore",
-    "description": "Updating Dependencies, Deployment Targets, Publishing.",
-    "scopes": ["dependencies", "deployment", "release"]
+    "description": "Updating Dependencies, Publishing.",
+    "scopes": ["dependencies", "release"]
   },
   {
     "emoji": "📝",

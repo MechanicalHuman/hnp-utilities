@@ -39,7 +39,7 @@ const NONE = { name: ['none'], value: '' }
  * @type {Object}
  */
 module.exports = {
-  prompter: function (cz, commit) {
+  prompter: function(cz, commit) {
     loadScopes()
       .then(createQuestions)
       .then(cz.prompt)
@@ -57,7 +57,7 @@ module.exports = {
  *
  * @returns {Promise<string[]>} Project Scopes.
  */
-function loadScopes () {
+function loadScopes() {
   return readPkg()
     .then(fp.getOr([], 'pkg.config.scopes'))
     .catch(() => [])
@@ -66,7 +66,7 @@ function loadScopes () {
 /**
  * Parses the types to create a pretty choice
  */
-function getChoices () {
+function getChoices() {
   const name = choice => fp.padStart(MAX_DESC)(choice.value)
   const desc = choice => wrap(choice.description, MAX)
   return types.map(choice => {
@@ -79,7 +79,7 @@ function getChoices () {
   })
 }
 
-function shouldSkip (answers) {
+function shouldSkip(answers) {
   if (answers.type === 'WIP') return true
 
   const defaultAnswers = [
@@ -110,7 +110,7 @@ function shouldSkip (answers) {
  * @return {Array} Return an array of `inquirer.js` questions
  * @private
  */
-function createQuestions (scopes) {
+function createQuestions(scopes) {
   const hasScopes = ({ type }) =>
     fp.pipe(
       fp.find(['value', type]),
@@ -201,7 +201,7 @@ function createQuestions (scopes) {
  * @return {Object} PassTrough
  * @throws {Error} If answers.confirmCommit is false
  */
-function cancel (answers) {
+function cancel(answers) {
   if (answers.confirmCommit === false) {
     throw new Error('User canceled the commit.')
   }
@@ -214,7 +214,7 @@ function cancel (answers) {
  * @param {Object} answers Answers provided by `inquirer.js`
  * @return {String} Formated git commit message
  */
-function format (answers) {
+function format(answers) {
   const { type, subject } = answers
   // parentheses are only needed when a scope is present
   const scope = answers.scope ? `(${answers.scope.trim()}): ` : ': '
@@ -223,23 +223,23 @@ function format (answers) {
   // wrap body at 100
   const body = answers.body
     ? wrap(answers.body, LIMIT)
-      .split('|')
-      .join('\n')
+        .split('|')
+        .join('\n')
     : false
 
   const breaking = answers.breaking
     ? fp.pipe(
-      fp.constant(answers.breaking),
-      brk => wrap(brk, LIMIT),
-      brk => `BREAKING CHANGE:
+        fp.constant(answers.breaking),
+        brk => wrap(brk, LIMIT),
+        brk => `BREAKING CHANGE:
       ${brk}`
-    )()
+      )()
     : false
   // Close issues
   const footer = answers.issues
     ? (answers.issues.match(/#\d+/g) || [])
-      .map(issue => `Fixes ${issue}`)
-      .join('\n')
+        .map(issue => `Fixes ${issue}`)
+        .join('\n')
     : false
 
   return fp
@@ -248,7 +248,7 @@ function format (answers) {
     .trim()
 }
 
-function printCommit (msg) {
+function printCommit(msg) {
   // @ts-ignore
   console.log(`${chalk.green('> Commit message:')}
 
@@ -260,6 +260,6 @@ function printCommit (msg) {
   return msg
 }
 
-function lengthReducer (max, { value }) {
+function lengthReducer(max, { value }) {
   return value.length > max ? value.length : max
 }

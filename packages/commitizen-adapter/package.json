@@ -20,8 +20,7 @@
   ],
   "main": "lib/commitizen-adapter.js",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
@@ -30,9 +29,9 @@
     "chalk": "^2.4.2",
     "cli-truncate": "^1.1.0",
     "lodash": "^4.17.11",
-    "read-pkg-up": "^4.0.0",
+    "read-pkg-up": "^5.0.0",
     "term-size": "^1.2.0",
-    "wrap-ansi": "^4.0.0"
+    "wrap-ansi": "^5.1.0"
   },
   "publishConfig": {
     "access": "public"
