@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    "header",
+    "react",
+    "standard",
+    "no-constructor-bind",
+    "class-prefer-methods"
+  ],
+  "extends": [
+    "standard",
+    "plugin:lodash-fp/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/standard",
+    "prettier/react"
+  ],
+  "rules": {
+    "lodash-fp/consistent-name": ["error", "fp"],
+    "no-console": "warn",
+    "header/header": 0,
+    "no-constructor-bind/no-constructor-bind": 2,
+    "no-constructor-bind/no-constructor-state": 2,
+    "class-prefer-methods/prefer-methods": 2
+  },
+  "parserOptions": { "ecmaFeatures": { "jsx": true } },
+  "env": { "es6": true, "node": true, "browser": true }
+}

@@ -63,12 +63,12 @@
   },
   "devDependencies": {
     "@hnp/package-scripts": "file:packages/package-scripts",
-    "eslint": "^5.12.1",
+    "eslint": "^5.16.0",
     "eslint-config-hnp": "file:packages/eslint-config",
     "husky": "^1.3.1",
-    "lerna": "^3.10.7",
-    "lint-staged": "^8.1.1",
+    "lerna": "^3.13.2",
+    "lint-staged": "^8.1.5",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.16.3"
+    "prettier": "^1.16.4"
   }
 }
