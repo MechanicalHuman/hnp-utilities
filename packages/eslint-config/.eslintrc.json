@@ -23,5 +23,10 @@
     "class-prefer-methods/prefer-methods": 2
   },
   "parserOptions": { "ecmaFeatures": { "jsx": true } },
-  "env": { "es6": true, "node": true, "browser": true }
+  "env": { "es6": true, "node": true, "browser": true },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

@@ -1,6 +1,7 @@
 {
   "name": "eslint-config-hnp-react",
   "version": "1.0.7",
+  "private": true,
   "description": "EsLint Rules for React Apps",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/eslint-config-react#readme",
   "bugs": {
