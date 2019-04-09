@@ -1,7 +1,7 @@
 {
   "plugins": [
     "header",
-    "react",
+
     "standard",
     "no-constructor-bind",
     "class-prefer-methods"
@@ -23,10 +23,5 @@
     "class-prefer-methods/prefer-methods": 2
   },
   "parserOptions": { "ecmaFeatures": { "jsx": true } },
-  "env": { "es6": true, "node": true, "browser": true },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  "env": { "es6": true, "node": true, "browser": true }
 }
