@@ -1,7 +1,6 @@
 {
   "name": "eslint-config-hnp-react",
   "version": "1.0.10",
-  "private": true,
   "description": "EsLint Rules for React Apps",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/eslint-config-react#readme",
   "bugs": {
@@ -16,13 +15,15 @@
   "contributors": [
     "Jorge Proaño <jorge@hiddennodeproblem.com>"
   ],
-  "main": "eslint-config.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
+    "confusing-browser-globals": "^1.0.6",
     "eslint-config-hnp": "^1.1.4",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-react": "^7.12.4"
   },
   "peerDependencies": {
