@@ -1,7 +1,7 @@
 {
   "plugins": [
     "header",
-
+    "react",
     "standard",
     "no-constructor-bind",
     "class-prefer-methods"
