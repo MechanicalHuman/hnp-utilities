@@ -60,7 +60,7 @@ module.exports = {
  */
 function loadScopes() {
   return readPkg()
-    .then(fp.getOr('packageJson.config.scopes', []))
+    .then(fp.getOr([], 'packageJson.config.scopes'))
     .then(scopes => (Array.isArray(scopes) ? scopes : []))
     .catch(() => [])
 }
