@@ -25,10 +25,11 @@ const types = require('./types.json')
 
 const LIMIT = 100
 const MAX = fp.pipe(
-  termSize,
-  fp.getOr(LIMIT, 'columns'),
+  () => termSize(),
+  term => term.columns || LIMIT,
   v => (v > LIMIT ? LIMIT : v)
 )()
+
 const MAX_DESC = types.reduce(lengthReducer, 0)
 const SEPARATOR = { type: 'separator' }
 const NONE = { name: ['none'], value: '' }
@@ -39,7 +40,7 @@ const NONE = { name: ['none'], value: '' }
  * @type {Object}
  */
 module.exports = {
-  prompter: function(cz, commit) {
+  prompter: function (cz, commit) {
     loadScopes()
       .then(createQuestions)
       .then(cz.prompt)
@@ -59,7 +60,8 @@ module.exports = {
  */
 function loadScopes() {
   return readPkg()
-    .then(fp.getOr([], 'pkg.config.scopes'))
+    .then(fp.getOr('packageJson.config.scopes', []))
+    .then(scopes => (Array.isArray(scopes) ? scopes : []))
     .catch(() => [])
 }
 
@@ -83,18 +85,15 @@ function shouldSkip(answers) {
   if (answers.type === 'WIP') return true
 
   const defaultAnswers = [
-    'Quick Commit',
-    'Updated dependencies.',
-    'Updated Deployments.',
-    'New Version',
-    'Updated Scripts',
-    'Updated Ecosystem definitions',
-    'Updated Config files',
-    'Updated Webpack configuration',
-    'Updated TypeScript configuration',
-    'Changed Linting rules',
     'Passing lint rules.',
-    'First commit.'
+    'Updated Deployments.',
+    'Updated Dependencies.',
+    'Updated Environment definition.',
+    'Updated Scripts.',
+    'Updated Build system.',
+    'Updated VsCode configuration.',
+    'Updated Github Actions',
+    'Changed Linting rules'
   ]
 
   if (defaultAnswers.includes(answers.subject.trim())) return true
@@ -147,21 +146,25 @@ function createQuestions(scopes) {
       message: 'Write a short description:',
       default: ({ type, scope }) => {
         if (type === 'WIP') return 'Quick Commit'
-        if (type === 'chore') {
-          if (scope === 'dependencies') return 'Updated dependencies.'
-          if (scope === 'deploy') return 'Updated Deployments.'
-          if (scope === 'release') return 'Published new version'
-        }
-        if (type === 'build') {
-          if (scope === 'scripts') return 'Updated Scripts'
-          if (scope === 'ecosystem') return 'Updated Ecosystem definitions'
-          if (scope === 'config') return 'Updated Config files'
-          if (scope === 'webpack') return 'Updated Webpack configuration'
-          if (scope === 'typescript') return 'Updated TypeScript configuration'
-          if (scope === 'linters') return 'Changed Linting rules'
-        }
         if (type === 'style') return 'Passing lint rules.'
-        if (type === 'init') return 'First commit.'
+        if (type === 'chore') {
+          switch (scope) {
+            case 'dependencies':
+              return 'Updated Dependencies.'
+            case 'environment':
+              return 'Updated Environment definition.'
+            case 'scripts':
+              return 'Updated Scripts.'
+            case 'build':
+              return 'Updated Build system.'
+            case 'vscode':
+              return 'Updated VsCode configuration.'
+            case 'github':
+              return 'Updated Github Actions'
+            case 'linters':
+              return 'Changed Linting rules'
+          }
+        }
         return ''
       },
       validate: input => (input.length > 0 ? true : 'Empty commit!')
@@ -169,7 +172,8 @@ function createQuestions(scopes) {
     {
       type: 'input',
       name: 'body',
-      message: 'Provide a longer description: (optional)',
+      message:
+        'Provide a longer description [ break lines with | ]: (optional)',
       when: answers => shouldSkip(answers) === false
     },
     {
@@ -182,7 +186,7 @@ function createQuestions(scopes) {
       type: 'input',
       name: 'breaking',
       message: 'List any BREAKING CHANGES (optional):',
-      when: answers => ['feat', 'fix', 'chore'].includes(answers.type)
+      when: answers => ['feat', 'fix'].includes(answers.type)
     },
     {
       type: 'confirm',
@@ -222,9 +226,7 @@ function format(answers) {
   const head = truncate(`${type}${scope}${subject.trim()}`, LIMIT)
   // wrap body at 100
   const body = answers.body
-    ? wrap(answers.body, LIMIT)
-        .split('|')
-        .join('\n')
+    ? wrap(answers.body, LIMIT).split('|').join('\n')
     : false
 
   const breaking = answers.breaking
@@ -242,21 +244,17 @@ function format(answers) {
         .join('\n')
     : false
 
-  return fp
-    .compact([head, body, breaking, footer])
-    .join('\n\n')
-    .trim()
+  return fp.compact([head, body, breaking, footer]).join('\n\n').trim()
 }
 
 function printCommit(msg) {
-  // @ts-ignore
-  console.log(`${chalk.green('> Commit message:')}
+  const message = `${chalk.green('> Commit message:')}
 
-  ${chalk
-    // @ts-ignore
-    .dim(msg)}
+  ${chalk.dim(msg)}
 
-  `)
+`
+  console.log(message)
+
   return msg
 }
 

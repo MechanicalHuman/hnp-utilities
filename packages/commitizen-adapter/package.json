@@ -26,12 +26,12 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "cli-truncate": "^1.1.0",
-    "lodash": "^4.17.11",
-    "read-pkg-up": "^5.0.0",
-    "term-size": "^1.2.0",
-    "wrap-ansi": "^5.1.0"
+    "chalk": "^4.1.0",
+    "cli-truncate": "^2.1.0",
+    "lodash": "^4.17.15",
+    "read-pkg-up": "^7.0.1",
+    "term-size": "^2.2.0",
+    "wrap-ansi": "^7.0.0"
   },
   "publishConfig": {
     "access": "public"

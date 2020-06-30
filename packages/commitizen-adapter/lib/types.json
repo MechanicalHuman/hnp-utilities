@@ -40,24 +40,20 @@
   },
 
   { "value": "separator" },
+
   {
     "emoji": "📦",
-    "value": "build",
-    "description": "Changes that affect the build system, configurations or external resources.",
+    "value": "chore",
+    "description": "Changes to the build process, auxiliary tools, libraries, etc'",
     "scopes": [
+      "dependencies",
+      "environment",
       "scripts",
-      "ecosystem",
-      "config",
-      "webpack",
-      "typescript",
+      "build",
+      "vscode",
+      "github",
       "linters"
     ]
-  },
-  {
-    "emoji": "👷",
-    "value": "chore",
-    "description": "Updating Dependencies, Publishing.",
-    "scopes": ["dependencies", "release"]
   },
   {
     "emoji": "📝",
@@ -68,15 +64,7 @@
   {
     "emoji": "✅",
     "value": "test",
-    "description": "Adding/Correcting tests.",
-    "scopes": []
-  },
-
-  { "value": "separator" },
-  {
-    "emoji": "🎉",
-    "value": "init",
-    "description": "First commit.",
+    "description": "Adding missing tests.",
     "scopes": []
   }
 ]
