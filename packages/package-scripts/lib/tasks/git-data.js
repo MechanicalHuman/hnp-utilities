@@ -10,12 +10,7 @@ const utils = require('../utils')
 
 const parseAuthors = fp.pipe(
   fp.split(/\r?\n/g),
-  fp.map(
-    fp.pipe(
-      fp.replace(/^\s*#.*$/, ''),
-      fp.trim
-    )
-  ),
+  fp.map(fp.pipe(fp.replace(/^\s*#.*$/, ''), fp.trim)),
   fp.compact,
   fp.map(utils.parsePerson)
 )
@@ -25,9 +20,8 @@ module.exports = () =>
     {
       title: 'Get Git remote',
       task: ctx =>
-        execa
-          .stdout('git', ['config', '--get', 'remote.origin.url'])
-          .then(remote => gitParser(remote))
+        execa('git', ['config', '--get', 'remote.origin.url'])
+          .then(({ stdout }) => gitParser(stdout))
           .then(repoData => (ctx.repoData = repoData))
           .then(() => (ctx.remote = true))
           .catch(e => {
@@ -38,14 +32,23 @@ module.exports = () =>
       title: 'Get Contributors via local Repo',
       task: ctx =>
         execa
-          .shell('git log --format="%aN <%aE>" | sort -f | uniq')
+          .command('git log --format="%aN <%aE>" | sort -f | uniq', {
+            shell: true
+          })
           .then(data => parseAuthors(data.stdout))
           .then(cnt => mergeContributors(ctx, cnt))
     }
   ])
 
-function mergeContributors (context, contributors) {
-  const current = fp.getOr([], 'contributors', context)
-  const merged = fp.unionBy((x = {}) => x.email)(contributors, current)
-  context['contributors'] = fp.compact(merged)
+function mergeContributors(context, contributors) {
+  const skip = [
+    'dependabot[bot]@users.noreply.github.com',
+    'semantic-release-bot@martynus.net'
+  ]
+
+  context.contributors = fp.pipe(
+    fp.getOr([], 'contributors'),
+    current => fp.unionBy((x = {}) => x.email)(contributors, current),
+    fp.filter((x = {}) => !skip.includes(x.email))
+  )(context)
 }

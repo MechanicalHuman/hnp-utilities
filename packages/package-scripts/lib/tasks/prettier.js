@@ -9,15 +9,15 @@ module.exports = () =>
   new Listr([
     {
       title: 'Prettier package.json',
-      task: () => execa.stdout('prettier', ['--write', PKG_PATH])
+      task: () => execa('prettier', ['--write', PKG_PATH])
     },
     {
       title: 'Prettier README.md',
-      task: () => execa.stdout('prettier', ['--write', README_PATH])
+      task: () => execa('prettier', ['--write', README_PATH])
     },
     {
       title: 'Prettier TODO.md',
       skip: ctx => ctx.todos === false,
-      task: () => execa.stdout('prettier', ['--write', TODO_PATH])
+      task: () => execa('prettier', ['--write', TODO_PATH])
     }
   ])

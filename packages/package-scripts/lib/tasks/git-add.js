@@ -19,7 +19,10 @@ const worker = (FILE_PATH, HASH_PATH) => async (ctx, task) => {
   const oldHash = fp.getOr('', `hash.${HASH_PATH}`)(ctx)
   const newHash = await utils.readFile(FILE_PATH).then(data => utils.hash(data))
   if (oldHash === newHash) task.skip('File Unchanged')
-  if (oldHash !== newHash) return execa.stdout('git', ['add', FILE_PATH])
+  if (oldHash !== newHash) {
+    const { stdout } = await execa('git', ['add', FILE_PATH])
+    return stdout
+  }
 }
 
 module.exports = () =>
