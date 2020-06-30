@@ -20,11 +20,10 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "babel-eslint": "^10.0.1",
-    "confusing-browser-globals": "^1.0.6",
+    "babel-eslint": "^10.1.0",
+    "confusing-browser-globals": "^1.0.9",
     "eslint-config-hnp": "^1.2.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.20.2"
   },
   "peerDependencies": {
     "eslint": ">=5.0.0"

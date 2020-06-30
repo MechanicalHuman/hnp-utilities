@@ -15,13 +15,13 @@
   "contributors": [
     "Jorge Proaño <jorge@hiddennodeproblem.com>"
   ],
-  "files": [
-    "lib"
-  ],
   "main": "lib/commitizen-adapter.js",
   "directories": {
     "lib": "lib"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

@@ -15,9 +15,9 @@
 
 -   [Usage](#usage)
 
-    -   [compile](#compile)
-    -   [todos](#todos)
-    -   [version](#version)
+    -   [`compile`](#compile)
+    -   [`todos`](#todos)
+    -   [`version`](#version)
 
 -   [Changelog](#changelog)
 

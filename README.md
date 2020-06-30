@@ -23,7 +23,6 @@ Originally created as an internal tool for repository consistency at [**@CactusT
 |             [eslint-config-hnp](./packages/eslint-config#readme) | EsLint Rules                |
 | [eslint-config-hnp-react](./packages/eslint-config-react#readme) | EsLint Rules for React Apps |
 |       [stylelint-config-hnp](./packages/stylelint-config#readme) | Stylelint rules             |
-|             [tslint-config-hnp](./packages/tslint-config#readme) | TsLint rules                |
 
 ## License
 
