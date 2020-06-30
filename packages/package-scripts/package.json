@@ -1,6 +1,6 @@
 {
   "name": "@hnp/package-scripts",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Package Maintenance Scripts",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/package-scripts#readme",
   "bugs": {
@@ -30,7 +30,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@hnp/license-generator": "^1.0.3",
+    "@hnp/license-generator": "^1.0.4",
     "chalk": "^4.1.0",
     "execa": "^4.0.2",
     "find-up": "^4.1.0",

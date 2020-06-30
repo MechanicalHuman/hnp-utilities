@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-hnp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "EsLint Rules",
   "homepage": "https://github.com/MechanicalHuman/hnp-utilities/tree/master/packages/eslint-config#readme",
   "bugs": {
